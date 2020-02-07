@@ -1,0 +1,11 @@
+{
+  "name": "@ucheba/api-proforientation",
+  "version": "1.0.0",
+  "description": "Api for proforientation service",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "typescript": "^3.7.5"
+  }
+}
