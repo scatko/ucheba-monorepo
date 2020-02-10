@@ -1,6 +1,6 @@
 {
   "name": "@ucheba/proforientation",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Proforientation online service",
   "license": "MIT",
   "scripts": {
@@ -18,7 +18,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@ucheba/api-proforientation": "^1.0.0",
+    "@ucheba/api-proforientation": "^0.0.1",
     "next": "^9.2.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
