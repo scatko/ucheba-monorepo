@@ -1,9 +1,27 @@
 const path = require("path");
-const withTypeScript = require("@zeit/next-typescript");
-const withCustomBabelConfigFile = require("next-plugin-custom-babel-config");
+const withPlugins = require('next-compose-plugins');
+const withCustomBabelConfig = require("next-plugin-custom-babel-config");
+const withTranspileModules = require("next-plugin-transpile-modules");
 
-module.exports = withCustomBabelConfigFile(
-  withTypeScript({
-    babelConfigFile: path.resolve("./babel.config.js")
-  })
-);
+function withCustomWebpack(config = {}) {
+    const { webpack } = config;
+
+    config.webpack = (config, ...rest) => {
+        config.externals = config.externals || [];
+
+        return webpack(config, ...rest)
+    };
+
+    return config
+}
+
+const plugins = [
+    [withTranspileModules, { transpileModules: ["@ucheba"] }],
+    [withCustomBabelConfig, { babelConfigFile: path.resolve("../../babel.config.js") }],
+    [withCustomWebpack],
+];
+
+const config = {
+};
+
+module.exports = withPlugins(plugins, config);

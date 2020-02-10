@@ -2,10 +2,15 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "services/*",
-    "packages/*"
+    "services/**/*",
+    "packages/**/*"
   ],
+  "scripts": {
+    "postinstall": "rexreplace \"followSymlinks: false\" \"followSymlinks: true\" ./node_modules/watchpack/lib/DirectoryWatcher.js -V",
+    "update:version": "lerna version --no-push"
+  },
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "rexreplace": "^5.2.0"
   }
 }
