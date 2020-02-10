@@ -1,8 +1,7 @@
 {
-  "name": "@ucheba/api-proforientation",
+  "name": "@ucheba/dal",
   "version": "0.0.1",
-  "description": "Api for proforientation service",
-  "main": "index.ts",
+  "description": "Data access layer",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^3.7.5"

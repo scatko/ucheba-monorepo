@@ -1,7 +1,7 @@
 {
-  "name": "@ucheba/proforientation",
+  "name": "@ucheba/proforientation-web",
   "version": "0.0.1",
-  "description": "Proforientation online service",
+  "description": "Proforientation web",
   "license": "MIT",
   "scripts": {
     "dev": "next",
@@ -18,7 +18,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@ucheba/api-proforientation": "^0.0.1",
+    "@ucheba/dal": "^0.0.1",
     "next": "^9.2.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

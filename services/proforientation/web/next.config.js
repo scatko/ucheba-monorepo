@@ -17,7 +17,7 @@ function withCustomWebpack(config = {}) {
 
 const plugins = [
     [withTranspileModules, { transpileModules: ["@ucheba"] }],
-    [withCustomBabelConfig, { babelConfigFile: path.resolve("../../babel.config.js") }],
+    [withCustomBabelConfig, { babelConfigFile: path.resolve("../../../babel.config.js") }],
     [withCustomWebpack],
 ];
 
