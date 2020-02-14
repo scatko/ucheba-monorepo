@@ -13,8 +13,7 @@ const BlogIndex: NextPage<Props> = ({ posts }) => {
             <h1>Acme's blog</h1>
             <ul>
                 {posts.map(post => (
-                    <li key={post.id}>
-                        <Link passHref href={`/${post.id}`}>
+                    <li key={ post. id}><Link passHref href={`/${post.id}`}>
                             <a>{post.title}</a>
                         </Link>
                     </li>
