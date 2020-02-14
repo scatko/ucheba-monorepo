@@ -7,7 +7,11 @@
   ],
   "scripts": {
     "postinstall": "rexreplace \"followSymlinks: false\" \"followSymlinks: true\" ./node_modules/watchpack/lib/DirectoryWatcher.js -V",
-    "update:version": "lerna version --no-push"
+    "update:version": "lerna version --no-push",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix services",
+    "format": "prettier \"**/*.+(ts|js|jsx|json|css|md)\"",
+    "format:write": "prettier --write \"**/*.+(ts|js|jsx|json|css|md)\""
   },
   "husky": {
     "hooks": {
@@ -15,6 +19,9 @@
     }
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
     "lerna": "^3.20.2",
     "prettier": "1.19.1",
