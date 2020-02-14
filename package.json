@@ -10,8 +10,7 @@
     "update:version": "lerna version --no-push",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier \"**/*.+(ts|tsx|js|jsx|json|css|md)\"",
-    "format2": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\""
+    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\""
   },
   "husky": {
     "hooks": {

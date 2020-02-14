@@ -19,8 +19,7 @@
     "react",
     "react-hooks",
     "jsx-a11y",
-    "@typescript-eslint",
-    "prettier"
+    "@typescript-eslint"
   ],
   "parserOptions": {
     "ecmaVersion": 2018,
