@@ -1,6 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
+    "airbnb",
     "eslint:recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
@@ -16,6 +17,7 @@
   "plugins": [
     "import",
     "react",
+    "react-hooks",
     "jsx-a11y",
     "@typescript-eslint",
     "prettier"
@@ -27,11 +29,42 @@
       "jsx": true
     }
   },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"]
+      }
+    }
+  ],
   "rules": {
     "no-console": "warn",
     "no-eval": "error",
     "import/first": "error",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [ 1, { "extensions": [".jsx", ".tsx"] } ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/member-delimiter-style": [
+      "error", {
+        "multiline": {
+          "delimiter": "none",
+          "requireLast": false
+        },
+        "singleline": {
+          "delimiter": "comma",
+          "requireLast": false
+        }
+      }
+    ],
     "jsx-a11y/anchor-is-valid": [
       "error", {
         "components": [
@@ -54,6 +87,11 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   }
 }

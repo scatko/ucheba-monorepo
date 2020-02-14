@@ -1,15 +1,17 @@
-module.exports = function (api) {
-  api.cache(true);
+const babelConfig = api => {
+  api.cache(true)
 
   const presets = [
     "next/babel",
-    ["@babel/preset-typescript", {isTSX: true, allExtensions: true}]
-  ];
+    ["@babel/preset-typescript", {isTSX: true, allExtensions: true}],
+  ]
 
-  const plugins = [["styled-components"]];
+  const plugins = [["styled-components"]]
 
   return {
     presets,
-    plugins
-  };
-};
+    plugins,
+  }
+}
+
+module.exports = babelConfig
