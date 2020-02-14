@@ -9,8 +9,16 @@
     "postinstall": "rexreplace \"followSymlinks: false\" \"followSymlinks: true\" ./node_modules/watchpack/lib/DirectoryWatcher.js -V",
     "update:version": "lerna version --no-push"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "devDependencies": {
+    "husky": "^4.2.3",
     "lerna": "^3.20.2",
+    "prettier": "1.19.1",
+    "pretty-quick": "^2.0.1",
     "rexreplace": "^5.2.0"
   }
 }
