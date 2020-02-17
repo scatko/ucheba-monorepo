@@ -9,6 +9,7 @@
     "postinstall": "rexreplace \"followSymlinks: false\" \"followSymlinks: true\" ./node_modules/watchpack/lib/DirectoryWatcher.js -V",
     "update:version": "lerna version --no-push",
     "lint": "eslint .",
+    "lint:staged": "lint-staged",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\""
   },
