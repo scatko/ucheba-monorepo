@@ -1,7 +1,7 @@
-import * as React from "react"
-import {NextPage} from "next"
-import Link from "next/link"
-import {apiClient, Post} from "@ucheba/dal/proforientation"
+import * as React from 'react'
+import {NextPage} from 'next'
+import Link from 'next/link'
+import {apiClient, Post} from '@ucheba/dal/proforientation'
 
 interface Props {
   posts: Post[]

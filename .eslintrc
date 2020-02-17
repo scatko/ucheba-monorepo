@@ -48,6 +48,7 @@
     "import/first": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [ 1, { "extensions": [".jsx", ".tsx"] } ],
+    "react/jsx-props-no-spreading": [ "off" ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-var-requires": "off",
