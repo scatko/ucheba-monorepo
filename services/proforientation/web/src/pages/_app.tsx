@@ -5,7 +5,7 @@ import {ThemeProvider} from 'styled-components'
 
 const App = ({Component, pageProps}: AppProps): JSX.Element => {
   return (
-    <ThemeProvider theme={{base: 'default', mode: 'light'}}>
+    <ThemeProvider theme={{style: 'default'}}>
       <Component {...pageProps} />
     </ThemeProvider>
   )

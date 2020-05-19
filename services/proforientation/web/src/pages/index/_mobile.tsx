@@ -1,6 +1,6 @@
 import {NextPage} from 'next'
 import * as React from 'react'
-import Button from '@ucheba/ui/basic/Button/web/Button@mobile'
+import Button from '@ucheba/ui/basic/Button/web/mobile'
 
 const mobile: NextPage = () => {
   return (
