@@ -1,6 +1,6 @@
 import React, {forwardRef} from 'react'
 import styled, {css} from 'styled-components'
-import {genModifiers} from '@ucheba/utils/helpers/styles'
+import {addModifiersToBlock} from '@ucheba/utils/helpers/styles'
 import {BlockProps} from '../_types'
 import {getRightProps} from '../_bll'
 
@@ -20,7 +20,13 @@ export const Icon = styled.span`
   align-items: center;
 `
 
-const modifiers = genModifiers({
+export const Block = styled.div<BlockProps>`
+  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+`
+
+addModifiersToBlock(Block, {
   color: {
     default: css`
       background-color: ${(props): string => props.theme.colors.default};
@@ -30,7 +36,6 @@ const modifiers = genModifiers({
         color: #fff;
       }
     `,
-
     primary: css`
       background-color: ${(props): string => props.theme.colors.primary};
 
@@ -45,7 +50,6 @@ const modifiers = genModifiers({
       font-size: 16px;
       padding: 12px;
     `,
-
     large: css`
       font-size: 22px;
       padding: 20px;
@@ -59,14 +63,6 @@ const modifiers = genModifiers({
   `,
 })
 
-export const Block = styled.div`
-  cursor: pointer;
-  border-radius: 8px;
-  text-decoration: none;
-
-  ${modifiers}
-`
-
 export const defaultProps = {
   color: 'default',
   size: 'default',
@@ -79,7 +75,7 @@ export default forwardRef<HTMLElement, BlockProps>(function Button(
   ref
 ) {
   return (
-    <Block {...getRightProps(props, ref)} icon={!!icon}>
+    <Block {...getRightProps(props, ref, {icon})}>
       <Inner>{children}</Inner>
       {icon && <Icon>{icon}</Icon>}
     </Block>

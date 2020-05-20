@@ -15,17 +15,11 @@ export const isMobile = (ctx: object): boolean => {
   return Boolean(mobileDetect(ctx))
 }
 
-export const compose = (...args): Function => {
-  const fns = [].slice.call(args)
-
-  return fns.reduce(
-    (a, b) => {
-      return (): Function => {
-        return a(b.apply(0, args))
-      }
-    },
-    arg => {
-      return arg
+export const changePropsValueToBoolean = (props: object): object => {
+  return Object.keys(props).reduce((acc, name) => {
+    return {
+      ...acc,
+      [name]: Boolean(props[name]),
     }
-  )
+  }, {})
 }

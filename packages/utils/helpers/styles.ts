@@ -1,8 +1,7 @@
 import theme from 'styled-theming'
-import {StyledFunction} from 'styled-components'
 
-export const genModifiers = (modifiers: object): StyledFunction<any>[] => {
-  return Object.keys(modifiers).reduce((accModifiers, modifier) => {
+export const addModifiersToBlock = (Component: any, modifiers: object): void => {
+  Object.keys(modifiers).forEach(modifier => {
     let kindModifier = modifiers[modifier]
 
     if (Array.isArray(kindModifier)) {
@@ -20,10 +19,8 @@ export const genModifiers = (modifiers: object): StyledFunction<any>[] => {
       }
     }, {})
 
-    accModifiers.push(theme.variants('mode', modifier, valueModifier))
-
-    return accModifiers
-  }, [])
+    Component.componentStyle.rules.push(theme.variants('mode', modifier, valueModifier))
+  })
 }
 
 interface ThemeVars {
