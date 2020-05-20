@@ -1,6 +1,6 @@
 import React, {forwardRef} from 'react'
 import styled, {css} from 'styled-components'
-import getModifiers from '@ucheba/utils/helpers/styles'
+import {genModifiers} from '@ucheba/utils/helpers/styles'
 import {BlockProps} from '../_types'
 import {getRightProps} from '../_bll'
 
@@ -20,19 +20,19 @@ export const Icon = styled.span`
   align-items: center;
 `
 
-const modifiers = getModifiers({
+const modifiers = genModifiers({
   color: {
     default: css`
-      background-color: #ccc;
+      background-color: ${(props): string => props.theme.colors.default};
       border: 2px solid red;
 
       ${Inner} {
-        color: #333;
+        color: #fff;
       }
     `,
 
     primary: css`
-      background-color: blue;
+      background-color: ${(props): string => props.theme.colors.primary};
 
       ${Inner} {
         color: #fff;

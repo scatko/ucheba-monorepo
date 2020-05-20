@@ -6,6 +6,11 @@ import Button from '@ucheba/ui/basic/Button/web/desktop'
 const Icon = ({type}: {type: string}): JSX.Element => <span>{type}</span>
 
 const desktop: NextPage = () => {
+  const handleClick = (e: React.MouseEvent): void => {
+    e.preventDefault()
+    console.log('___', e)
+  }
+
   return (
     <div>
       <h1>Desktop</h1>
@@ -14,7 +19,7 @@ const desktop: NextPage = () => {
         <a>ЕГЭ</a>
       </Link>
 
-      <Button type='button' href='/' icon={<Icon type='+' />}>
+      <Button type='button' href='/' icon={<Icon type='+' />} onClick={handleClick}>
         Button desk default with icon
       </Button>
 

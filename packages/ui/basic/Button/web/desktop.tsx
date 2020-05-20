@@ -1,24 +1,16 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
-import getModifiers from '@ucheba/utils/helpers/styles'
+import {genModifiers} from '@ucheba/utils/helpers/styles'
 import DefaultComponent, {defaultProps, Icon, Inner} from './_default'
 import {BlockProps} from '../_types'
 
-const modifiers = getModifiers({
+const modifiers = genModifiers({
   color: {
     default: css`
-      background-color: #000;
+      background-color: ${(props): string => props.theme.colors.accent};
 
       ${Inner} {
         color: #fff;
-      }
-    `,
-
-    primary: css`
-      background-color: orange;
-
-      ${Inner} {
-        color: #000;
       }
     `,
   },

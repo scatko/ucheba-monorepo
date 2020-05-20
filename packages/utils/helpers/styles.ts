@@ -1,7 +1,7 @@
 import theme from 'styled-theming'
 import {StyledFunction} from 'styled-components'
 
-export const getModifiers = (modifiers: object): StyledFunction<any>[] => {
+export const genModifiers = (modifiers: object): StyledFunction<any>[] => {
   return Object.keys(modifiers).reduce((accModifiers, modifier) => {
     let kindModifier = modifiers[modifier]
 
@@ -20,10 +20,29 @@ export const getModifiers = (modifiers: object): StyledFunction<any>[] => {
       }
     }, {})
 
-    accModifiers.push(theme.variants('style', modifier, valueModifier))
+    accModifiers.push(theme.variants('mode', modifier, valueModifier))
 
     return accModifiers
   }, [])
 }
 
-export default getModifiers
+interface ThemeVars {
+  colors: {
+    primary: string
+    accent: string
+    default: string
+  }
+}
+export class Theme {
+  private readonly variables: ThemeVars
+
+  constructor(props: ThemeVars) {
+    this.variables = props
+  }
+
+  get vars(): ThemeVars {
+    return this.variables
+  }
+}
+
+export default Theme
